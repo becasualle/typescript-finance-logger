@@ -1,39 +1,54 @@
-// arrays
-let names = ['mark', 'sveta', 'alex'];
+// EXPLICIT TYPES
+let character: string;
+let age: number;
+let isLoggedIn: boolean;
 
-// can't change array type itself
-// names = 'hello'
+// age = 'mark'; can't do this
+age = 30;
+isLoggedIn = true;
 
-names.push('roma'); //can add string
-//can not add numbers
-// names.push(3); 
-// names[0] = 3;
+// ARRAYS
+let ninjas: string[]; //array of strings
 
-let numbers = [10, 20, 30, 40];
-numbers.push(25);
-// numbers.push('mark');
-// numbers[1] = 'mark';
+// doesn't allowed
+// ninjas = [10, 23]
 
-let mixed = ['mark', 15, 'sveta', 30];
-// can add types that contains mixed array
-mixed.push('alex');
-mixed.push(189);
-mixed[3] = 317;
+ninjas = ['mark', 'sveta'];
 
-// objects
-let ninja = {
+// array is undefined so we can't push values
+// ninjas.push('mark')
+
+let students: string[] = [];
+students.push('mark', 'sveta');
+
+// UNION TYPES
+let mixed: (string|number|boolean)[] = [];
+mixed.push('hello');
+mixed.push(20);
+mixed.push(false);
+// ['hello', 20, false]
+
+let uid: string|number;
+uid = '123';
+uid = 123;
+
+// OBJECTS
+let ninjaOne: object;
+ninjaOne = {
   name: 'mark',
-  status: 'cool',
   age: 30
-};
-// ninja always has to be object, name always has to be string
+}
+ninjaOne=[]; //array is type of object
 
-// can't add new properties to the object
-// ninja.skills = ['coding', 'gaming'];
+// create object that have to contain 3 properties with selected types
+let ninjaTwo: {
+  name: string,
+  age: number,
+  beltColor: string
+}
 
-// we can update object but only if it matches original structure (same properties)
-ninja = {
+ninjaTwo = {
   name: 'mark',
-  status: 'cool',
-  age: 30
-};
+  age: 15,
+  beltColor: 'black',
+}

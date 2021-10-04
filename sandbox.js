@@ -1,32 +1,39 @@
-// arrays
-var names = ['mark', 'sveta', 'alex'];
-// can't change array type itself
-// names = 'hello'
-names.push('roma'); //can add string
-//can not add numbers
-// names.push(3); 
-// names[0] = 3;
-var numbers = [10, 20, 30, 40];
-numbers.push(25);
-// numbers.push('mark');
-// numbers[1] = 'mark';
-var mixed = ['mark', 15, 'sveta', 30];
-// can add types that contains mixed array
-mixed.push('alex');
-mixed.push(189);
-mixed[3] = 317;
-// objects
-var ninja = {
+// EXPLICIT TYPES
+var character;
+var age;
+var isLoggedIn;
+// age = 'mark'; can't do this
+age = 30;
+isLoggedIn = true;
+// ARRAYS
+var ninjas; //array of strings
+// doesn't allowed
+// ninjas = [10, 23]
+ninjas = ['mark', 'sveta'];
+// array is undefined so we can't push values
+// ninjas.push('mark')
+var students = [];
+students.push('mark', 'sveta');
+// UNION TYPES
+var mixed = [];
+mixed.push('hello');
+mixed.push(20);
+mixed.push(false);
+// ['hello', 20, false]
+var uid;
+uid = '123';
+uid = 123;
+// OBJECTS
+var ninjaOne;
+ninjaOne = {
     name: 'mark',
-    status: 'cool',
     age: 30
 };
-// ninja always has to be object, name always has to be string
-// can't add new properties to the object
-// ninja.skills = ['coding', 'gaming'];
-// we can update object but only if it matches original structure (same properties)
-ninja = {
+ninjaOne = []; //array is type of object
+// create object that have to contain 3 properties with selected types
+var ninjaTwo;
+ninjaTwo = {
     name: 'mark',
-    status: 'cool',
-    age: 30
+    age: 15,
+    beltColor: 'black'
 };

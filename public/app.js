@@ -1,12 +1,22 @@
 "use strict";
-// const anchor = document.querySelector('a')!;
-// if(anchor){
-//     console.log(anchor.href);
-// }
-// console.log(anchor.href)
-// const form = document.querySelector('form')!;
+// classes
+var Invoice = /** @class */ (function () {
+    function Invoice(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    Invoice.prototype.format = function () {
+        return this.client + " ows $" + this.amount + " for " + this.details;
+    };
+    return Invoice;
+}());
+var marchInvoice = new Invoice('Mark', 'gas and oil', 153);
+var invoices = [];
+// invoices.push('hello')
+invoices.push(marchInvoice);
+marchInvoice.client = 'sveta';
 var form = document.querySelector('.new-item-form');
-// console.log(form.children);
 // inputs
 var type = document.querySelector('#type');
 var tofrom = document.querySelector('#tofrom');

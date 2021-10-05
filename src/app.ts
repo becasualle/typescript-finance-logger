@@ -1,15 +1,27 @@
-// const anchor = document.querySelector('a')!;
+// classes
+class Invoice {
+    client: string;
+    details: string;
+    amount: number;
 
-// if(anchor){
-//     console.log(anchor.href);
-// }
+    constructor(c:string, d:string, a:number){
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
 
-// console.log(anchor.href)
+    format(){
+        return `${this.client} ows $${this.amount} for ${this.details}`
+    }
+}
 
-// const form = document.querySelector('form')!;
+const marchInvoice = new Invoice('Mark', 'gas and oil', 153);
+let invoices: Invoice[] = [];
+// invoices.push('hello')
+invoices.push(marchInvoice);
+marchInvoice.client = 'sveta';
 
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
-// console.log(form.children);
 
 // inputs
 const type = document.querySelector('#type') as HTMLSelectElement;

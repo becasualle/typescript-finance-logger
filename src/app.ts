@@ -9,8 +9,10 @@ const tofrom = document.querySelector('#tofrom') as HTMLInputElement;
 const details = document.querySelector('#details') as HTMLInputElement;
 const amount = document.querySelector('#amount') as HTMLInputElement;
 
+// const ul = document.querySelector('.item-list') as HTMLUListElement;
 const ul = document.querySelector('ul')!;
 const list = new ListTemplate(ul);
+// console.log(list.container);
 
 form.addEventListener('submit', (e: Event)=>{
     e.preventDefault();

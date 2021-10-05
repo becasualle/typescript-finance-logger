@@ -11,11 +11,10 @@ var Invoice = /** @class */ (function () {
     };
     return Invoice;
 }());
-var marchInvoice = new Invoice('Mark', 'gas and oil', 153);
+var invOne = new Invoice('Mark', 'gas and oil', 153);
+var invTwo = new Invoice('Sveta', 'cosmetics', 313);
 var invoices = [];
-// invoices.push('hello')
-invoices.push(marchInvoice);
-marchInvoice.client = 'sveta';
+invoices.push(invOne, invTwo);
 var form = document.querySelector('.new-item-form');
 // inputs
 var type = document.querySelector('#type');

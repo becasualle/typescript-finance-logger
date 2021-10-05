@@ -1,8 +1,8 @@
 // classes
 class Invoice {
-    client: string;
-    details: string;
-    amount: number;
+    readonly client: string;
+    private details: string;
+    public amount: number;
 
     constructor(c:string, d:string, a:number){
         this.client = c;
@@ -15,11 +15,13 @@ class Invoice {
     }
 }
 
-const marchInvoice = new Invoice('Mark', 'gas and oil', 153);
+const invOne = new Invoice('Mark', 'gas and oil', 153);
+const invTwo = new Invoice('Sveta', 'cosmetics', 313);
+
 let invoices: Invoice[] = [];
-// invoices.push('hello')
-invoices.push(marchInvoice);
-marchInvoice.client = 'sveta';
+invoices.push(invOne, invTwo);
+
+
 
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
 

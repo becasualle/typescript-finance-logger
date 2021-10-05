@@ -1,32 +1,11 @@
-// classes
-class Invoice {
-    // readonly client: string;
-    // private details: string;
-    // public amount: number;
-
-    // constructor(c:string, d:string, a:number){
-    //     this.client = c;
-    //     this.details = d;
-    //     this.amount = a;
-    // }
-
-    constructor(
-        readonly client: string,
-        private details: string,
-        public amount: number
-    ){}
-
-    format(){
-        return `${this.client} ows $${this.amount} for ${this.details}`
-    }
-}
+import {Invoice} from './classes/invoice.js';
 
 const invOne = new Invoice('Mark', 'gas and oil', 153);
 const invTwo = new Invoice('Sveta', 'cosmetics', 313);
 
 let invoices: Invoice[] = [];
 invoices.push(invOne, invTwo);
-
+console.log(invoices)
 
 
 const form = document.querySelector('.new-item-form') as HTMLFormElement;

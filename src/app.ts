@@ -29,14 +29,3 @@ form.addEventListener('submit', (e: Event)=>{
 
     list.render(doc, type.value, 'start');
 })
-
-// TUPLES
-
-let arr = ['ryu', 25, true];
-arr = [ 30, 'mark', true]
-
-let tup: [string, number, boolean] = ['mark', 30, true];
-// tup = [ 30, 'mark', true]
-
-let student: [string, number]
-student = ['peter', 123];

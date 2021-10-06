@@ -17,39 +17,26 @@ const list = new ListTemplate(ul);
 form.addEventListener('submit', (e: Event)=>{
     e.preventDefault();
 
+    let values: [string, string, number]
+    values = [tofrom.value, details.value, amount.valueAsNumber]
+
     let doc: HasFormatter;
     if(type.value === 'invoice') {
-        doc=new Invoice(tofrom.value, details.value, amount.valueAsNumber)
+        doc=new Invoice(...values)
     } else {
-        doc=new Payment(tofrom.value, details.value, amount.valueAsNumber)
+        doc=new Payment(...values)
     }
 
     list.render(doc, type.value, 'start');
 })
 
-// ENUMS
+// TUPLES
 
-enum ResourceType {
-    BOOK, AUTHOR, FILM, DIRECTOR, PERSON
-}
+let arr = ['ryu', 25, true];
+arr = [ 30, 'mark', true]
 
-interface Resource<T> {
-    uid: number;
-    resourceType: ResourceType;
-    data: T;
-} 
+let tup: [string, number, boolean] = ['mark', 30, true];
+// tup = [ 30, 'mark', true]
 
-const docThree: Resource<string> = {
-    uid: 1,
-    resourceType: ResourceType.BOOK,
-    data: 'Atlas Shrugged'
-}
-
-const docFour: Resource<string> = {
-    uid: 2,
-    resourceType: ResourceType.FILM,
-    data: 'Dark Knight'
-}
-
-console.log(docThree, docFour)
-
+let student: [string, number]
+student = ['peter', 123];
